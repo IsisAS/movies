@@ -18,8 +18,8 @@ export default function Header() {
                     </div>
                     <div className="flex items-center space-x-8">
                         <Link
-                            href="/"
-                            className={`${isActive('/')} hover:text-violet-600 transition-colors font-medium`}
+                            href="/home"
+                            className={`${isActive('/home')} hover:text-violet-600 transition-colors font-medium`}
                         >
                             Home
                         </Link>
