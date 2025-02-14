@@ -8,13 +8,6 @@ import 'swiper/css/pagination';
 
 import usePopularMovies from './popular-movies';
 
-interface Movie {
-    id: number;
-    title: string;
-    backdrop_path: string;
-    overview: string;
-}
-
 const PopularMovies: React.FC = () => {
     const { movies, loading, error } = usePopularMovies();
 
