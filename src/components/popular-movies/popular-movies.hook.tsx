@@ -5,11 +5,13 @@ import { EffectCoverflow, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'boxicons'
 
 import usePopularMovies from './popular-movies';
+import { formatDate } from '@/utils/format.date';
 
 const PopularMovies: React.FC = () => {
-    const { movies, loading, error } = usePopularMovies();
+    const { movies, loading, error, calculateApproval } = usePopularMovies();
 
     return (
         <div>
@@ -38,6 +40,16 @@ const PopularMovies: React.FC = () => {
                                         className="rounded-lg shadow-lg w-full h-[60vh] object-cover"
                                     />
                                     <div className="absolute bottom-0 left-0 w-full pl-10 pb-20 bg-gradient-to-t from-black to-transparent">
+                                        <div className='flex gap-2 items-center'>
+                                            <div className='flex gap-2 items-center'>
+                                                {React.createElement("box-icon", { type: "solid", name: "like", color: '#41bd47', size: 'sm' }) as any}
+                                                <p className='text-small text-green-400'>
+                                                    {calculateApproval(movie.vote_average).toFixed(1)}%
+                                                </p>
+                                            </div>
+                                            <p>•</p>
+                                            <p className='text-small font-bold'>{formatDate(movie.release_date)}</p>
+                                        </div>
                                         <h1 className="text-white text-xl font-bold">{movie.title}</h1>
                                         <p className="text-gray-400 text-sm w-2/4">{movie.overview}</p>
                                     </div>

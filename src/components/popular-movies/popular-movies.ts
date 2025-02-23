@@ -7,6 +7,7 @@ interface Movie {
     release_date: string;
     overview: string;
     poster_path: string;
+    vote_average: number;
 }
 
 const usePopularMovies = () => {
@@ -27,7 +28,12 @@ const usePopularMovies = () => {
         fetchMovies();
     }, []);
 
-    return { movies, loading, error };
+
+    const calculateApproval = (voteAverage: number): number => {
+        return (voteAverage / 10) * 100;
+    };
+
+    return { movies, loading, error, calculateApproval };
 };
 
 export default usePopularMovies;
