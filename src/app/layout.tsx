@@ -1,8 +1,7 @@
 "use client";
 import "./globals.css";
 import Header from "@/components/header";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+
 
 
 export default function RootLayout({
@@ -10,12 +9,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.push("/home");
-  }, []);
-
   return (
     <html lang="en">
       <body>
