@@ -15,7 +15,7 @@ const Genre: React.FC = () => {
                 <div
                     key={genre.id}
                     onClick={() => handleGenreClick(genre.id)}
-                    className={`cursor-pointer h-[20px] ${selectedGenre === genre.id ? 'border-b-4 border-violet-600 text-white' : 'text-white'}`}
+                    className={`cursor-pointer ${selectedGenre === genre.id ? 'border-b-4 border-violet-600 text-white' : 'text-white'}`}
                 >
                     <p>{genre.name}</p>
                 </div>
