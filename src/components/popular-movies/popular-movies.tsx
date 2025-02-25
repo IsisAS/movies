@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'boxicons'
 
-import usePopularMovies from './popular-movies';
+import usePopularMovies from './popular-movies.hook';
 import { formatDate } from '@/utils/format.date';
 
 const PopularMovies: React.FC = () => {
